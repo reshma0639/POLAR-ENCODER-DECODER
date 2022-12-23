@@ -136,4 +136,12 @@ void loop()
 
   
 }
+//The output of the following code :
 
+/*
+10:49:37.136 ->  iterations took : 5000
+10:49:37.136 -> 108
+10:49:37.136 ->  milliseconds : 
+10:49:37.136 -> 21
+10:49:37.136 ->  microseconds per invocation
+*/
