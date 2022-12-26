@@ -171,11 +171,16 @@ Serial.print("\n");
 //Code uploadedin arduino for data transmission
 
 /*
-void setup() {
+int randNumber;
+void setup() 
+
+{
   Serial.begin(9600);
 }
-void loop() {
-  Serial.print("1");
+void loop() 
+{
+  randNumber=random(0,2);
+  Serial.print(randNumber);
   delay(10);
 }
 */
