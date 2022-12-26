@@ -1,4 +1,4 @@
-
+const unsigned int MAX_MESSAGE_LENGTH = 200;
 #include<malloc.h>
 #include<stdlib.h>
 #include<string.h>
@@ -42,7 +42,7 @@ int K=200;
 int N=1024;
 int m[1024];
 int u[1024];
-int m1=1;
+
 int d;
 int a[1024];
 int b[1024];
@@ -52,62 +52,57 @@ int l;
 int index1;
 int index2;
 int index3;
-void setup()
+int i,j,k;
+void setup() 
 {
-  Serial.begin(115200);
-  int i = 0, k, j;
-  int Q[N];
-  int n12 = log2(N);
-  for (j = 0; j < 1024; j++)
-  {
-    if (Q1[j] < N)
-    {
-      Q[i] = Q1[j];
-      i++;
-    }
-  }
-  for (i = 0; i < N; i++)
-  {
-    Serial.print(Q[i]);
-  }
-  Serial.println("  ");
-  for (i = 0; i < K; i++)
-  {
-    m[i] = 1;
+ Serial.begin(9600);
+}
 
-  }
-  for (i = 0; i < N; i++)
+void loop() 
+{
+
+ //Check to see if anything is available in the serial receive buffer
+ while (Serial.available() > 0)
+ {
+   //Create a place to hold the incoming message
+   static char message[MAX_MESSAGE_LENGTH];
+   static unsigned int message_pos = 0;
+
+   //Read the next available byte in the serial receive buffer
+   char inByte = Serial.read();
+
+   //Message coming in (check not terminating character) and guard for over message size
+   if ( inByte != '\n' && (message_pos < MAX_MESSAGE_LENGTH - 1) )
+   {
+     //Add the incoming byte to our message
+     message[message_pos] = inByte;
+     message_pos++;
+   }
+   //Full message received...
+   else
+   {
+     //Add null character to string
+     message[message_pos] = '\0';
+
+     //Print the message (or do other things)
+     Serial.println(" ");
+     Serial.print("The message signal is : ");
+     Serial.println(" ");
+     Serial.println(message);
+Serial.println(" ");
+
+for (i = 0; i < N; i++)
   {
     u[i] = 0;
   }
 
-
   for (j = 0; j < K; j++)
   {
-    u[Q[N - K + j]] = m[j];
+    u[Q1[N - K + j]] = message[j];
   }
 
-
-
-
-
-  for (int j = 0; j < K; j++)
-  {
-    Serial.print(m[j]);
-  }
-
-
-  Serial.println("  ");
-
-
-  for (int j = 0; j < N; j++)
-  {
-    Serial.print(u[j] );
-  }
-
-  
-
-  for(d=n12-1;d>=0;d--)
+int m1=1;
+ for(d=9;d>=0;d--)
 {
   for(i=0;i<N;i=i+2*m1)
   {
@@ -149,20 +144,17 @@ void setup()
   }
   m1=m1*2;
 }
-
+Serial.print("The encoded signal is : ");
 Serial.println(" ");
-  Serial.print("The polar encoded signal is :");
-Serial.println(" ");
-  int h;
-  for (h = 0; h < N; h++)
-  {
-    Serial.print(conc[h]);
-  }
-  Serial.println(" ");
+for(i=0;i<N;i++)
+{
+  Serial.print((conc[i]=='1')?"0":"1");
 }
 
-void loop()
-{
+Serial.print("\n");
 
-
+     //Reset for the next message
+     message_pos = 0;
+   }
+ }
 }
