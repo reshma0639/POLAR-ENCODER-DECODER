@@ -1,3 +1,7 @@
+// Code uploaded in esp32 and The results are seen in Serial monitor
+
+
+
 const unsigned int MAX_MESSAGE_LENGTH = 200;
 #include<malloc.h>
 #include<stdlib.h>
@@ -168,7 +172,7 @@ Serial.print("\n");
 
 
 
-//Code uploadedin arduino for data transmission
+//Code uploaded in arduino for data transmission
 
 /*
 int randNumber;
