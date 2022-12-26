@@ -158,3 +158,24 @@ Serial.print("\n");
    }
  }
 }
+
+
+
+
+
+
+
+
+
+
+//Code uploadedin arduino for data transmission
+
+/*
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+  Serial.print("1");
+  delay(10);
+}
+*/
