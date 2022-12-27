@@ -188,3 +188,6 @@ void loop()
   delay(10);
 }
 */
+
+
+// connect the rx and tx pins of both arduino and esp32 for UART communication
