@@ -1,7 +1,7 @@
 # code written by hamdan for getting logic for implementing in verilog
 from math import log2
 
-N = 32
+N = 1024 # N is replaced with the desired value 
 level = int(log2(N))
 
 for i in range(0, level):
