@@ -1,22 +1,22 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: FWC IITH
+// Engineer: Electronics engineer
 // 
 // Create Date: 30.12.2022 05:49:41
-// Design Name: 
+// Design Name: polar encoder
 // Module Name: top_polar
-// Project Name: 
+// Project Name: polar encoder
 // Target Devices: 
 // Tool Versions: 
-// Description: 
+// Description: Perform polar encoder operation K=200,N=1024
 // 
 // Dependencies: 
 // 
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+// This is the top module for polar encoder
 //////////////////////////////////////////////////////////////////////////////////
 
 
