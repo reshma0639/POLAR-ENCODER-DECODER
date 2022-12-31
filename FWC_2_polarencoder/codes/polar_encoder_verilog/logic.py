@@ -1,4 +1,7 @@
 # code written by hamdan for getting logic for implementing in verilog
+#execute this code in python and copy the output to the verlog code for desired operation
+#This code is for unpacking the loops 
+
 from math import log2
 
 N = 1024 # N is replaced with the desired value 
