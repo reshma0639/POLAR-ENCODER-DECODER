@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.8.22)  2 JAN 2023 16:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.8.22)  5 JAN 2023 17:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/mannava/latex/proba.tex
-(/home/mannava/latex/proba.tex
+**/home/mannava/module_2/probability/documents/proba.tex
+(/home/mannava/module_2/probability/documents/proba.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
@@ -449,120 +449,363 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 99.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+)
+
+LaTeX Warning: Reference `eq:dice_xdef' on page 1 undefined on input line 127.
+
+
+LaTeX Warning: Reference `eq:dice_x_sum' on page 1 undefined on input line 141.
+
+
+LaTeX Warning: Reference `eq:dice_x1_indep' on page 1 undefined on input line 141.
+
+
+LaTeX Warning: Reference `eq:dice_pmf_xi' on page 1 undefined on input line 148.
+
+
+LaTeX Warning: Reference `eq:dice_x_conv' on page 1 undefined on input line 149.
+
+
+LaTeX Warning: Reference `eq:dice_x_conv_x1' on page 1 undefined on input line 157.
+
+
+LaTeX Warning: Reference `eq:dice_pmf_xi' on page 1 undefined on input line 172.
+
+
+LaTeX Warning: Reference `eq:dice_x_conv_cond' on page 1 undefined on input line 172.
+
+
+LaTeX Warning: Reference `eq:dice_wrong' on page 1 undefined on input line 186.
+
+
+LaTeX Warning: Reference `eq:dice_pmf_xi' on page 1 undefined on input line 195.
+
+
+LaTeX Warning: Reference `eq:dice_xz' on page 1 undefined on input line 195.
+
+
+LaTeX Warning: Reference `eq:dice_xiz' on page 1 undefined on input line 211.
+
+
+LaTeX Warning: Reference `eq:dice_xzprod_def' on page 1 undefined on input line 211.
+
+
+LaTeX Warning: Reference `eq:dice_xz' on page 1 undefined on input line 248.
+
+
+LaTeX Warning: Reference `eq:dice_xzprod' on page 1 undefined on input line 248.
+
+
+LaTeX Warning: Reference `eq:dice_xz_closed' on page 1 undefined on input line 248.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<./pmf_dice.pdf, id=20, 462.52798pt x 346.89601pt>
-File: ./pmf_dice.pdf Graphic file (type pdf)
-<use ./pmf_dice.pdf>
-Package pdftex.def Info: ./pmf_dice.pdf  used on input line 263.
-(pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 268.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+
+LaTeX Warning: Reference `eq:dice_x_conv_final' on page 2 undefined on input line 255.
+
+
+LaTeX Warning: Reference `eq:dice_x_conv_final' on page 2 undefined on input line 255.
+
+
+LaTeX Warning: Reference `eq:dice_xz_closed' on page 2 undefined on input line 255.
+
+
+LaTeX Warning: Reference `fig:dice' on page 2 undefined on input line 259.
+
+
+LaTeX Warning: Reference `eq:dice_x_conv_final' on page 2 undefined on input line 259.
+
+
+LaTeX Warning: File `./pmf_dice.pdf' not found on input line 263.
+
+
+/home/mannava/module_2/probability/documents/proba.tex:263: Package pdftex.def Error: File `./pmf_dice.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ...phics[width=\columnwidth]{./pmf_dice.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 263.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<./uni_cdf.pdf, id=21, 462.52798pt x 346.89601pt>
-File: ./uni_cdf.pdf Graphic file (type pdf)
-<use ./uni_cdf.pdf>
-Package pdftex.def Info: ./uni_cdf.pdf  used on input line 300.
-(pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
- [2 <./pmf_dice.pdf> <./uni_cdf.pdf>]
-<gauss_cdf.pdf, id=87, 462.52798pt x 346.89601pt>
-File: gauss_cdf.pdf Graphic file (type pdf)
-<use gauss_cdf.pdf>
-Package pdftex.def Info: gauss_cdf.pdf  used on input line 408.
-(pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
+
+LaTeX Warning: File `./uni_cdf.pdf' not found on input line 300.
+
+
+/home/mannava/module_2/probability/documents/proba.tex:300: Package pdftex.def Error: File `./uni_cdf.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.300 ...aphics[width=\columnwidth]{./uni_cdf.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `eq:uni_pdf' on page 2 undefined on input line 322.
+
+
+LaTeX Warning: Reference `eq:pdf_to_cdf' on page 2 undefined on input line 322.
+
+[2]
+
+LaTeX Warning: File `gauss_cdf.pdf' not found on input line 408.
+
+
+/home/mannava/module_2/probability/documents/proba.tex:408: Package pdftex.def Error: File `gauss_cdf.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.408 ...aphics[width=\columnwidth]{gauss_cdf.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 404--411
 
  []
 
-<gauss_pdf.pdf, id=88, 462.52798pt x 346.89601pt>
-File: gauss_pdf.pdf Graphic file (type pdf)
-<use gauss_pdf.pdf>
-Package pdftex.def Info: gauss_pdf.pdf  used on input line 433.
-(pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
-[3 <./gauss_cdf.pdf> <./gauss_pdf.pdf>]
-<log.pdf, id=151, 462.52798pt x 346.89601pt>
-File: log.pdf Graphic file (type pdf)
-<use log.pdf>
-Package pdftex.def Info: log.pdf  used on input line 504.
-(pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
-<triangle_cdf.pdf, id=152, 462.52798pt x 346.89601pt>
-File: triangle_cdf.pdf Graphic file (type pdf)
-<use triangle_cdf.pdf>
-Package pdftex.def Info: triangle_cdf.pdf  used on input line 545.
-(pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
 
-Underfull \vbox (badness 1584) has occurred while \output is active []
+LaTeX Warning: File `gauss_pdf.pdf' not found on input line 433.
 
- [4 <./log.pdf>]
+
+/home/mannava/module_2/probability/documents/proba.tex:433: Package pdftex.def Error: File `gauss_pdf.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.433 ...aphics[width=\columnwidth]{gauss_pdf.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+
+LaTeX Warning: Reference `eq:gau_pdf' on page 4 undefined on input line 461.
+
+
+LaTeX Warning: Reference `eq:mean_exp' on page 4 undefined on input line 461.
+
+
+Underfull \vbox (badness 2556) has occurred while \output is active []
+
+
+
+LaTeX Warning: Reference `eq:var_exp' on page 4 undefined on input line 469.
+
+
+LaTeX Warning: File `log.pdf' not found on input line 504.
+
+
+/home/mannava/module_2/probability/documents/proba.tex:504: Package pdftex.def Error: File `log.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.504 ...ludegraphics[width=\columnwidth]{log.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[4]
+
+LaTeX Warning: Reference `eq:uni_cdf' on page 5 undefined on input line 515.
+
+
+LaTeX Warning: File `triangle_cdf.pdf' not found on input line 545.
+
+
+/home/mannava/module_2/probability/documents/proba.tex:545: Package pdftex.def Error: File `triangle_cdf.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.545 ...ics[width=\columnwidth]{triangle_cdf.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 549--550
 
  []
 
-<triangle_pdf.pdf, id=181, 462.52798pt x 346.89601pt>
-File: triangle_pdf.pdf Graphic file (type pdf)
-<use triangle_pdf.pdf>
-Package pdftex.def Info: triangle_pdf.pdf  used on input line 556.
-(pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
-</home/mannava/latex/3.pdf, id=182, 462.52798pt x 346.89601pt>
+
+LaTeX Warning: File `triangle_pdf.pdf' not found on input line 556.
+
+
+/home/mannava/module_2/probability/documents/proba.tex:556: Package pdftex.def Error: File `triangle_pdf.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.556 ...ics[width=\columnwidth]{triangle_pdf.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[5]
+
+LaTeX Warning: Reference `eq:uni_pdf' on page 6 undefined on input line 565.
+
+
+LaTeX Warning: Reference `eq:pdf_to_cdf' on page 6 undefined on input line 576.
+
+</home/mannava/latex/3.pdf, id=34, 462.52798pt x 346.89601pt>
 File: /home/mannava/latex/3.pdf Graphic file (type pdf)
 <use /home/mannava/latex/3.pdf>
 Package pdftex.def Info: /home/mannava/latex/3.pdf  used on input line 612.
 (pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
-[5 <./triangle_cdf.pdf> <./triangle_pdf.pdf>]
-</home/mannava/latex/bpsk_pe_snr.pdf, id=246, 462.52798pt x 346.89601pt>
+
+LaTeX Warning: Reference `eq:bpks_prob_err_cond' on page 6 undefined on input line 660.
+
+[6 </home/mannava/latex/3.pdf>]
+</home/mannava/latex/bpsk_pe_snr.pdf, id=59, 462.52798pt x 346.89601pt>
 File: /home/mannava/latex/bpsk_pe_snr.pdf Graphic file (type pdf)
 <use /home/mannava/latex/bpsk_pe_snr.pdf>
 Package pdftex.def Info: /home/mannava/latex/bpsk_pe_snr.pdf  used on input line 683.
 (pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
- [6 </home/mannava/latex/3.pdf> </home/mannava/latex/bpsk_pe_snr.pdf>]
+
+
+LaTeX Warning: Reference `eq:bpsk_prob_error_equi' on page 7 undefined on input line 710.
+
+
+LaTeX Warning: Reference `eq:q_func_integral' on page 7 undefined on input line 714.
+
+
+LaTeX Warning: Reference `eq:prob_error_delta_equi' on page 7 undefined on input line 720.
+
+
+LaTeX Warning: Reference `eq:q_func_integral' on page 7 undefined on input line 741.
+
+
+LaTeX Warning: Reference `prob:bpsk_delta_equi' on page 7 undefined on input line 748.
+
+[7 </home/mannava/latex/bpsk_pe_snr.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 752--755
 
  []
 
-</home/mannava/latex/bpsk_map_density.pdf, id=317, 462.52798pt x 346.89601pt>
+
+LaTeX Warning: Reference `fig:bpsk_map_density' on page 8 undefined on input line 765.
+
+</home/mannava/latex/bpsk_map_density.pdf, id=104, 462.52798pt x 346.89601pt>
 File: /home/mannava/latex/bpsk_map_density.pdf Graphic file (type pdf)
 <use /home/mannava/latex/bpsk_map_density.pdf>
 Package pdftex.def Info: /home/mannava/latex/bpsk_map_density.pdf  used on input line 768.
 (pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
-[7 </home/mannava/latex/bpsk_map_density.pdf>]
-</home/mannava/latex/chisq_cdf.pdf, id=358, 462.52798pt x 346.89601pt>
+
+LaTeX Warning: Reference `prob:bpsk_decision_uneqi' on page 8 undefined on input line 780.
+
+
+LaTeX Warning: Reference `fig:chisq_cdf' on page 8 undefined on input line 803.
+
+
+LaTeX Warning: Reference `fig:chisq_pdf' on page 8 undefined on input line 803.
+
+</home/mannava/latex/chisq_cdf.pdf, id=105, 462.52798pt x 346.89601pt>
 File: /home/mannava/latex/chisq_cdf.pdf Graphic file (type pdf)
 <use /home/mannava/latex/chisq_cdf.pdf>
 Package pdftex.def Info: /home/mannava/latex/chisq_cdf.pdf  used on input line 811.
 (pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
-</home/mannava/latex/pdf.pdf, id=359, 462.52798pt x 346.89601pt>
+</home/mannava/latex/pdf.pdf, id=106, 462.52798pt x 346.89601pt>
 File: /home/mannava/latex/pdf.pdf Graphic file (type pdf)
 <use /home/mannava/latex/pdf.pdf>
 Package pdftex.def Info: /home/mannava/latex/pdf.pdf  used on input line 817.
 (pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
-</home/mannava/latex/root_cdf.pdf, id=360, 462.52798pt x 346.89601pt>
+[8 </home/mannava/latex/bpsk_map_density.pdf> </home/mannava/latex/chisq_cdf.pdf> </home/mannava/latex/pdf.pdf>]
+
+LaTeX Warning: Reference `eq:cdf_to_pdf' on page 9 undefined on input line 845.
+
+
+LaTeX Warning: Reference `eq:square_pdf_gen' on page 9 undefined on input line 852.
+
+
+LaTeX Warning: Reference `eq:chisq_pdf' on page 9 undefined on input line 861.
+
+
+LaTeX Warning: Reference `eq:pdf_to_cdf' on page 9 undefined on input line 870.
+
+
+LaTeX Warning: Reference `eq:chisq2_cdf' on page 9 undefined on input line 877.
+
+
+LaTeX Warning: Reference `eq:chisq2_cdf_gen' on page 9 undefined on input line 877.
+
+</home/mannava/latex/root_cdf.pdf, id=216, 462.52798pt x 346.89601pt>
 File: /home/mannava/latex/root_cdf.pdf Graphic file (type pdf)
 <use /home/mannava/latex/root_cdf.pdf>
 Package pdftex.def Info: /home/mannava/latex/root_cdf.pdf  used on input line 894.
 (pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
-</home/mannava/latex/chisq_pdf.pdf, id=361, 462.52798pt x 346.89601pt>
+</home/mannava/latex/chisq_pdf.pdf, id=217, 462.52798pt x 346.89601pt>
 File: /home/mannava/latex/chisq_pdf.pdf Graphic file (type pdf)
 <use /home/mannava/latex/chisq_pdf.pdf>
 Package pdftex.def Info: /home/mannava/latex/chisq_pdf.pdf  used on input line 900.
 (pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
 
-Underfull \vbox (badness 2285) has occurred while \output is active []
+LaTeX Warning: Reference `fig:bpsk_pe_snr_rayleigh' on page 9 undefined on input line 921.
 
- [8 </home/mannava/latex/chisq_cdf.pdf> </home/mannava/latex/pdf.pdf>]
-</home/mannava/latex/prob_error.pdf, id=410, 462.52798pt x 346.89601pt>
+
+LaTeX Warning: Reference `eq:bpsk_decision' on page 9 undefined on input line 928.
+
+[9 </home/mannava/latex/root_cdf.pdf> </home/mannava/latex/chisq_pdf.pdf>]
+
+LaTeX Warning: Reference `eq:rayleigh_cdf' on page 10 undefined on input line 951.
+
+
+LaTeX Warning: Reference `eq:prob_err_bpsk_rayleigh_cdf' on page 10 undefined on input line 951.
+
+
+LaTeX Warning: Reference `eq:prob_err_bpsk_rayleigh_fN' on page 10 undefined on input line 970.
+
+
+LaTeX Warning: Reference `ch4_sim' on page 10 undefined on input line 984.
+
+
+LaTeX Warning: Reference `ch4_anal' on page 10 undefined on input line 984.
+
+
+LaTeX Warning: Reference `fig:bpsk_pe_snr_rayleigh' on page 10 undefined on input line 985.
+
+
+LaTeX Warning: Reference `fig:bpsk_pe_snr' on page 10 undefined on input line 986.
+
+</home/mannava/latex/prob_error.pdf, id=292, 462.52798pt x 346.89601pt>
 File: /home/mannava/latex/prob_error.pdf Graphic file (type pdf)
 <use /home/mannava/latex/prob_error.pdf>
 Package pdftex.def Info: /home/mannava/latex/prob_error.pdf  used on input line 989.
 (pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
 
-Underfull \vbox (badness 1043) has occurred while \output is active []
+Underfull \vbox (badness 1038) has occurred while \output is active []
 
- [9 </home/mannava/latex/root_cdf.pdf> </home/mannava/latex/chisq_pdf.pdf>]
-</home/mannava/latex/biv_scatter.pdf, id=459, 462.52798pt x 346.89601pt>
+
+
+LaTeX Warning: Reference `eq:prob_err_rayleigh_gen' on page 10 undefined on input line 993.
+
+
+LaTeX Warning: Reference `eq:prob_err_rayleigh_gen' on page 10 undefined on input line 997.
+
+</home/mannava/latex/biv_scatter.pdf, id=293, 462.52798pt x 346.89601pt>
 File: /home/mannava/latex/biv_scatter.pdf Graphic file (type pdf)
 <use /home/mannava/latex/biv_scatter.pdf>
 Package pdftex.def Info: /home/mannava/latex/biv_scatter.pdf  used on input line 1049.
@@ -570,27 +813,45 @@ Package pdftex.def Info: /home/mannava/latex/biv_scatter.pdf  used on input line
 
 Underfull \vbox (badness 4454) has occurred while \output is active []
 
-</home/mannava/latex/biv_pe_vs_snr.pdf, id=460, 462.52798pt x 346.89601pt>
+ [10 </home/mannava/latex/prob_error.pdf>]
+
+LaTeX Warning: Reference `fig:biv_pe_snr' on page 11 undefined on input line 1070.
+
+
+LaTeX Warning: Reference `eq:biv_fsk_decision' on page 11 undefined on input line 1077.
+
+
+LaTeX Warning: Reference `eq:prob_error_fsk_inter' on page 11 undefined on input line 1088.
+
+
+LaTeX Warning: Reference `fig:biv_pe_snr' on page 11 undefined on input line 1095.
+
+</home/mannava/latex/biv_pe_vs_snr.pdf, id=335, 462.52798pt x 346.89601pt>
 File: /home/mannava/latex/biv_pe_vs_snr.pdf Graphic file (type pdf)
 <use /home/mannava/latex/biv_pe_vs_snr.pdf>
 Package pdftex.def Info: /home/mannava/latex/biv_pe_vs_snr.pdf  used on input line 1099.
 (pdftex.def)             Requested size: 265.0125pt x 198.77023pt.
- [10 </home/mannava/latex/prob_error.pdf> </home/mannava/latex/biv_scatter.pdf>] [11
+[11 </home/mannava/latex/biv_scatter.pdf> </home/mannava/latex/biv_pe_vs_snr.pdf>] (./proba.aux)
 
- </home/mannava/latex/biv_pe_vs_snr.pdf>] (./proba.aux) ) 
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 9087 strings out of 478287
- 147592 string characters out of 5849289
- 538160 words of memory out of 5000000
- 27186 multiletter control sequences out of 15000+600000
+ 9271 strings out of 478287
+ 151691 string characters out of 5849289
+ 526888 words of memory out of 5000000
+ 27354 multiletter control sequences out of 15000+600000
  502856 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,15n,63p,452b,1619s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,15n,63p,477b,1194s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on proba.pdf (11 pages, 424406 bytes).
+Output written on proba.pdf (11 pages, 349091 bytes).
 PDF statistics:
- 648 PDF objects out of 1000 (max. 8388607)
- 242 compressed objects within 3 object streams
+ 482 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
