@@ -155,6 +155,7 @@ for(d=n12-1;d>=0;d--)
 		}
 		for(k=0;k<m1;k++)
 		{
+
 			conc[index2]=b[k];
 			index2++;
 		}

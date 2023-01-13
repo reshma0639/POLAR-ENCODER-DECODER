@@ -45,7 +45,7 @@ Q=[]
 
 K=int(input("Enter the no of message bits to be transmitted : "))
 
-N=1024
+N=8
 #N=int(input("Enter the no of bits to be encoded : "))
 
 #from the above list modify the reliability pattern according to size of N
@@ -57,297 +57,248 @@ for i in range(0,1024):
 for i in range(0,1024):
     if Q1[i]==120:
         print(i)
+print("The reliability sequence of 8 bit code : {}".format(Q))
+print()
+print(len(Q))
+print()
+
+n=int(np.log2(N))
+print("n={}".format(n))
+print()
+msg=[]
+
+#frozen bits for message signal
 
 
-ber_array = []
-snr_array = []
-for snr in range(1, 8):
-    #guassian noise characterstics
-    snr_array.append(snr)
-    EbNo_dB=snr
-    rate=K/N
-    EbNo=pow(10,(EbNo_dB/10))
-    sigma=np.sqrt(1/(2*rate*EbNo))
+for i in range(K):
+    #ele=int(input('Enter data bits of size K : '))
+    ele=1
+    msg.append(ele)
+u=[]
+
+
+for i in range(N):
+    ele=0
+    u.append(ele)
+
+
+for j in range(0,len(msg)):
+    u[Q[N-K+j]] = msg[j]
+print("The frozen data of message bits of size K is : {}".format(u))
+print( )
+
+
+A=([1,0],[1,1]) #kron matrix
+
+x=int(math.log(N,2))
+c=[]
+c=A
+for i in range(0,x-1):
+    c=np.kron(c,A)
+c=np.array(c)
+
+
+result = [None]*N
+for i in range(0,1):
+    for j in range(0,N):
+        result[j]=0
+        for k in range(0,N):
+            result[j]=result[j]^(u[k]*c[k][j])
+print("The polar encoded signal is :")
+print()
+print(result)
+
+#bpsk modulated signal
+
+bpsk=[]
+for i in range(0,N):
+    ele=1-2*result[i]
+    bpsk.append(ele)
 
 
 
 
 
 
+r=[]
+C=[]
+r=bpsk#+sigma*np.random.randn(1,N)
 
 
 
 
+print("The received signal is : {} ".format(r))
+print()
+#decoding
 
 
+F=[]
+F=Q[0:N-K]
+print("Frozen positions : {}".format(F))
+print()
+ns=[]
+L = np.zeros([n+1,N],dtype = float) #beliefs
+#print("L initial is {}".format(L))
+ucap = np.zeros([n+1,N],dtype=int) #decisions
+print()
+#print("initial ucap is {}".format(ucap))
+for i in range(0,2*N):
+    ele=0
+    ns.append(ele)
+print(len(ns))
+print("ns is {} ".format(ns))
 
-    print("The reliability sequence of 8 bit code : {}".format(Q))
-    print()
-    print(len(Q))
-    print()
-
-    n=int(np.log2(N))
-    print("n={}".format(n))
-    print()
-    msg=[]
-
-    #frozen bits for message signal
-
-
-    for i in range(K):
-        #ele=int(input('Enter data bits of size K : '))
-        ele=1
-        msg.append(ele)
-    u=[]
-
-
-    for i in range(N):
-        ele=0
-        u.append(ele)
+print()
+L[0][0:]=r
+#print(L)
 
 
-    for j in range(0,len(msg)):
-        u[Q[N-K+j]] = msg[j]
-    print("The frozen data of message bits of size K is : {}".format(u))
-    print( )
-
-
-    A=([1,0],[1,1]) #kron matrix
-
-    x=int(math.log(N,2))
+def f(a,b):
     c=[]
-    c=A
-    for i in range(0,x-1):
-        c=np.kron(c,A)
-    c=np.array(c)
-
-
-    result = [None]*N
-    for i in range(0,1):
-        for j in range(0,N):
-            result[j]=0
-            for k in range(0,N):
-                result[j]=result[j]^(u[k]*c[k][j])
-    print("The polar encoded signal is :")
-    print()
-    print(result)
-
-    #bpsk modulated signal
-
-    bpsk=[]
-    for i in range(0,N):
-        ele=1-2*result[i]
-        bpsk.append(ele)
+    for i in range(0,len(a)):
+        c.append(np.sign(a[i])*np.sign(b[i])*min(abs(a[i]),abs(b[i])))
+    return c
+def g(a,b,c):
+    d=[]
+    for i in range(0,len(a)):
+        d.append(b[i]+(1-2*c[i])*a[i])
+    return d
 
 
 
-
-
-    print(sigma)
-    np.random.randn(1,N)
-
-    r=[]
-    C=[]
-    r=bpsk+sigma*np.random.randn(1,N)
+node=0
+depth=0
+done=0
+flag=0
 
 
 
-
-    print("The received signal is : {} ".format(r))
-    print()
-    #decoding
+while(done==0):
 
 
-    F=[]
-    F=Q[0:N-K]
-    print("Frozen positions : {}".format(F))
-    print()
-    ns=[]
-    L = np.zeros([n+1,N],dtype = float) #beliefs
-    #print("L initial is {}".format(L))
-    ucap = np.zeros([n+1,N],dtype=int) #decisions
-    print()
-    #print("initial ucap is {}".format(ucap))
-    for i in range(0,2*N):
-        ele=0
-        ns.append(ele)
-    print()
-    #print("ns is {} ".format(ns))
+    if depth==n:
+        #print("leaf node opeation")
 
-    print()
-    L[0][0:]=r
-    #print(L)
-
-
-    def f(a,b):
-        c=[]
-        for i in range(0,len(a)):
-            c.append(np.sign(a[i])*np.sign(b[i])*min(abs(a[i]),abs(b[i])))
-        return c
-    def g(a,b,c):
-        d=[]
-        for i in range(0,len(a)):
-            d.append(b[i]+(1-2*c[i])*a[i])
-        return d
-
-
-
-    node=0
-    depth=0
-    done=0
-    flag=0
-
-
-
-    while(done==0):
-
-
-        if depth==n:
-            #print("leaf node opeation")
-
-            for i in range(0,len(F)):
-                if (F[i]==node):
-                    flag=1
-            if(flag==1):
-                #print("frozen position")
-                ucap[n,node]=0
-                flag=0
-            else:
-                if L[n,node]>=0:
-                    ucap[n,node]=0
-                else:
-                    ucap[n,node]=1
-            if (node==N-1):
-                done=1
-            else:
-                node=int(node/2)
-                depth=depth-1
-
-
-
+        for i in range(0,len(F)):
+            if (F[i]==node):
+                flag=1
+        if(flag==1):
+            #print("frozen position")
+            ucap[n,node]=0
+            flag=0
         else:
-            #non leaf
-            npos=pow(2,(depth))-1+node
-            #print("npos is {}".format(npos))
-            if ns[npos]==0:
-                #print("left operation")
+            if L[n,node]>=0:
+                ucap[n,node]=0
+            else:
+                ucap[n,node]=1
+        if (node==N-1):
+            done=1
+        else:
+            node=int(node/2)
+            depth=depth-1
+
+
+
+    else:
+        #non leaf
+        npos=pow(2,(depth))-1+node
+        #print("npos is {}".format(npos))
+        if ns[npos]==0:
+            #print("left operation")
+            #print("depth is {}".format(depth))
+            #print("node is {}".format(node))
+            temp=pow(2,(n-depth))
+            #print("temp is :{} ".format(temp))
+            Ln=L[depth,temp*node:temp*node+(temp)]#incoming beliefs
+            #print("Ln is {}".format(Ln))
+            a=[]
+            b=[]
+            a=Ln[0:int(temp/2)]
+            b=Ln[int(temp/2):]
+            #print("a is {}".format(a))
+            #print("b is {}".format(b))
+            node=node*2
+            depth=depth+1
+            temp=int(temp/2)
+            d=f(a,b)
+            L[depth,temp*node:temp*node+(temp)]=f(a,b)
+            print("L is {}".format(L))
+            ns[npos]=1
+            #print("ns is {}".format(ns))
+        else:
+            if(ns[npos]==1):
+                #print("npos is {}".format(npos))
+                #print("right operation")
                 #print("depth is {}".format(depth))
                 #print("node is {}".format(node))
-                temp=pow(2,(n-depth))
-                #print("temp is :{} ".format(temp))
-                Ln=L[depth,temp*node:temp*node+(temp)]#incoming beliefs
+                temp=pow(2,n-depth)
+                Ln=L[depth,temp*node:temp*(node+1)]
                 #print("Ln is {}".format(Ln))
-                a=[]
-                b=[]
                 a=Ln[0:int(temp/2)]
                 b=Ln[int(temp/2):]
                 #print("a is {}".format(a))
                 #print("b is {}".format(b))
-                node=node*2
-                depth=depth+1
-                temp=int(temp/2)
-                d=f(a,b)
-                L[depth,temp*node:temp*node+(temp)]=f(a,b)
-                #print("L is {}".format(L))
-                ns[npos]=1
+                lnode=2*node
+                ldepth=depth+1
+                ltemp=int(temp/2)
+                ucapn = ucap[ldepth,ltemp*lnode:ltemp*(lnode+1)]
+                #print("ucapn is {}".format(ucapn))
+                node = node *2 + 1
+                depth = depth + 1
+                temp = int(temp / 2)
+                L[depth,temp*node:temp*(node+1)] = g(a,b,ucapn)
+                #print(g(a,b,ucapn))
+                print("L is {}".format(L))
+                ns[npos] = 2;
                 #print("ns is {}".format(ns))
             else:
-                if(ns[npos]==1):
-                    #print("npos is {}".format(npos))
-                    #print("right operation")
-                    #print("depth is {}".format(depth))
-                    #print("node is {}".format(node))
-                    temp=pow(2,n-depth)
-                    Ln=L[depth,temp*node:temp*(node+1)]
-                    #print("Ln is {}".format(Ln))
-                    a=Ln[0:int(temp/2)]
-                    b=Ln[int(temp/2):]
-                    #print("a is {}".format(a))
-                    #print("b is {}".format(b))
-                    lnode=2*node
-                    ldepth=depth+1
-                    ltemp=int(temp/2)
-                    ucapn = ucap[ldepth,ltemp*lnode:ltemp*(lnode+1)]
-                    #print("ucapn is {}".format(ucapn))
-                    node = node *2 + 1
-                    depth = depth + 1
-                    temp = int(temp / 2)
-                    L[depth,temp*node:temp*(node+1)] = g(a,b,ucapn)
-                    #print(g(a,b,ucapn))
-                    #print("L is {}".format(L))
-                    ns[npos] = 2;
-                    #print("ns is {}".format(ns))
-                else:
-                    #print("parent operation")
-                    #print("depth is {}".format(depth))
-                    #print("node is {}".format(node))
-                    temp = pow(2,n-depth);
-                    lnode = 2*node
-                    rnode = 2*node + 1
-                    cdepth = depth + 1
-                    ctemp = int(temp/2);
-                    ucapl=[]
-                    ucapr=[]
-                    ucapl = ucap[cdepth,ctemp*lnode:ctemp*(lnode+1)]
-                    ucapr = ucap[cdepth,ctemp*rnode:ctemp*(rnode+1)];
-                    #print("ucapl is {}".format(ucapl))
-                    #print("ucapr is {}".format(ucapr))
-                    a11=[]
-                    a11=np.bitwise_xor(ucapl, ucapr)
-                    #print("a11 is {}".format(a11))
-                    res=[]
-                    res=np.concatenate((a11, ucapr), axis=None)
-                    #print(res)
-                    #print("res is {}".format(res))
-                    ucap[depth,temp*node:temp*(node+1)]=res
-                    #print("ucap is {}".format(ucap))
-                    node = int(node/2)
-                    depth = depth - 1;
-     
-            #something
-    print("final ucap is {}".format(ucap))
-    print("final L is {}".format(L))
-    #print("final ns is {}".format(ns))
-    final_result=[]
-    #print("final depth is :{}".format(depth))
-    final_result=ucap[n,Q[N-K:]]
-    dec=ucap[n,0:]
-    print( )
-    print("Last row of ucap is : {} ".format(ucap[n,0:]))
-    print(len(ucap[n,0:]))
-    index=0
-    res=dec[Q[N-K:N]]
-    print("The decoded signal is {}".format(res))
-    print(len(res))
-    bit_errors=0
-    for i in range(0,K):
-        if(msg[i]!=res[i]):
-            bit_errors=bit_errors+1
-    BER=(bit_errors/K)
-    print(bit_errors)
-    ber_array.append(BER)
-
-
-with open('message.txt', 'w') as filehandle:
-    for j in msg:
-        filehandle.write(f'{j}')
-with open('encoded.txt', 'w') as filehandle:
-    for j in result:
-        filehandle.write(f'{j}')
-with open('bpsk.txt', 'w') as filehandle:
-    for j in bpsk:
-        filehandle.write(f'{j}')
-
-with open('noise.txt', 'w') as filehandle:
-    for j in r:
-        filehandle.write(f'{j}')
-with open('decoded.txt', 'w') as filehandle:
-    for j in res:
-        filehandle.write(f'{j}')
+                #print("parent operation")
+                #print("depth is {}".format(depth))
+                #print("node is {}".format(node))
+                temp = pow(2,n-depth);
+                lnode = 2*node
+                rnode = 2*node + 1
+                cdepth = depth + 1
+                ctemp = int(temp/2);
+                ucapl=[]
+                ucapr=[]
+                ucapl = ucap[cdepth,ctemp*lnode:ctemp*(lnode+1)]
+                ucapr = ucap[cdepth,ctemp*rnode:ctemp*(rnode+1)];
+                #print("ucapl is {}".format(ucapl))
+                #print("ucapr is {}".format(ucapr))
+                a11=[]
+                a11=np.bitwise_xor(ucapl, ucapr)
+                #print("a11 is {}".format(a11))
+                res=[]
+                res=np.concatenate((a11, ucapr), axis=None)
+                #print(res)
+                #print("res is {}".format(res))
+                ucap[depth,temp*node:temp*(node+1)]=res
+                #print("ucap is {}".format(ucap))
+                node = int(node/2)
+                depth = depth - 1;
+ 
+        #something
+print("final ucap is {}".format(ucap))
+print("final L is {}".format(L))
+#print("final ns is {}".format(ns))
+final_result=[]
+#print("final depth is :{}".format(depth))
+final_result=ucap[n,Q[N-K:]]
+dec=ucap[n,0:]
+print( )
+print("Last row of ucap is : {} ".format(ucap[n,0:]))
+print(len(ucap[n,0:]))
+index=0
+res=dec[Q[N-K:N]]
+print("The decoded signal is {}".format(res))
+print(len(res))
 
 
 
-plt.plot(snr_array,ber_array)
+
+plt.semilogy(snr_array,ber_array)
+plt.scatter(snr_array,ber_array,'r')
 plt.xlabel('signal to noise ratio in dB')
 plt.ylabel('Bit error rates')
 plt.show()
