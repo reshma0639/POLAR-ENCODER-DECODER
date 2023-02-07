@@ -2,7 +2,7 @@
 
 
 #include<Arduino.h>
-const unsigned int MAX_MESSAGE_LENGTH = 200;
+const unsigned int MAX_MESSAGE_LENGTH = 201;
 #include<malloc.h>
 #include<stdlib.h>
 #include<string.h>
@@ -97,6 +97,7 @@ Serial.println(" ");
 for(i=0;i<K;i++)
 {
   message[i]=(message[i]-'0');
+}
 for (i = 0; i < N; i++)
   {
     u[i] = 0;
