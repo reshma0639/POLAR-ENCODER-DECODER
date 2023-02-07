@@ -44,7 +44,7 @@ Q=[]
 
 K=int(input("Enter the no of message bits to be transmitted : "))
 
-N=8
+N=1024
 #N=int(input("Enter the no of bits to be encoded : "))
 
 #from the above list modify the reliability pattern according to size of N
@@ -202,7 +202,7 @@ for snr in range(1, 8):
 
 
         if depth==n:
-            print("depth is : {} ".format(depth))
+            #print("depth is : {} ".format(depth))
             #print("leaf node opeation")
 
             for i in range(0,len(F)):
@@ -226,13 +226,13 @@ for snr in range(1, 8):
 
 
         else:
-            print(depth)
+            #print(depth)
             #non leaf
             npos=pow(2,(depth))-1+node
             #print("npos is {}".format(npos))
             if ns[npos]==0:
                 #print("left operation")
-                print("depth is {}".format(depth))
+                #print("depth is {}".format(depth))
                 #print("node is {}".format(node))
                 temp=pow(2,(n-depth))
                 #print("temp is :{} ".format(temp))
@@ -249,14 +249,13 @@ for snr in range(1, 8):
                 temp=int(temp/2)
                 d=f(a,b)
                 L[depth,temp*node:temp*node+(temp)]=f(a,b)
-                print("L is {}".format(L))
                 ns[npos]=1
                 #print("ns is {}".format(ns))
             else:
                 if(ns[npos]==1):
                     #print("npos is {}".format(npos))
                     #print("right operation")
-                    print("depth is {}".format(depth))
+                    #print("depth is {}".format(depth))
                     #print("node is {}".format(node))
                     temp=pow(2,n-depth)
                     Ln=L[depth,temp*node:temp*(node+1)]
@@ -275,12 +274,11 @@ for snr in range(1, 8):
                     temp = int(temp / 2)
                     L[depth,temp*node:temp*(node+1)] = g(a,b,ucapn)
                     #print(g(a,b,ucapn))
-                    print("L is {}".format(L))
                     ns[npos] = 2;
                     #print("ns is {}".format(ns))
                 else:
                     #print("parent operation")
-                    print("depth is {}".format(depth))
+                    #print("depth is {}".format(depth))
                     #print("node is {}".format(node))
                     temp = pow(2,n-depth);
                     lnode = 2*node
@@ -306,9 +304,6 @@ for snr in range(1, 8):
                     depth = depth - 1;
      
             #something
-    print("final ucap is {}".format(ucap))
-    print("final L is {}".format(L))
-    #print("final ns is {}".format(ns))
     final_result=[]
     #print("final depth is :{}".format(depth))
     final_result=ucap[n,Q[N-K:]]
@@ -327,7 +322,7 @@ for snr in range(1, 8):
     BER=(bit_errors/K)
     print(bit_errors)
     ber_array.append(BER)
-print("ns is : {}".format(ns));
+#print("ns is : {}".format(ns));
 plt.plot(snr_array,ber_array)
 plt.xlabel('signal to noise ratio in dB')
 plt.ylabel('Bit error rates')

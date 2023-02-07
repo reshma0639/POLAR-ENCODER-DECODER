@@ -45,7 +45,7 @@ Q=[]
 
 K=int(input("Enter the no of message bits to be transmitted : "))
 
-N=8
+N=1024
 #N=int(input("Enter the no of bits to be encoded : "))
 
 #from the above list modify the reliability pattern according to size of N
