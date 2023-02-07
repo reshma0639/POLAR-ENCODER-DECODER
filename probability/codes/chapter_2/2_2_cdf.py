@@ -1,12 +1,7 @@
 
-#Importing numpy, scipy, mpmath and pyplot
 import numpy as np
 import matplotlib.pyplot as plt
-
-#if using termux
-import subprocess
-import shlex
-#end if
+import scipy.stats as ss
 
 
 
@@ -22,7 +17,7 @@ err = [] #declaring probability list
 randvar = np.loadtxt('gau.dat',dtype='double')
 print(randvar)
 
-
+y = ss.norm.cdf(x)
 for i in range(0,100):
 	err_ind = np.nonzero(randvar < x[i]) #checking probability condition
 	err_n = np.size(err_ind) #computing the probability
@@ -30,18 +25,11 @@ for i in range(0,100):
 print(err_ind)
 print(err_n)
 print(err)	
-plt.plot(x.T,err)#plotting the CDF
+plt.scatter(x.T,err)#plotting the CDF
+plt.plot(x,y,color='r')
 plt.grid() #creating the grid
 plt.xlabel('$x$')
 plt.ylabel('$F_X(x)$')
-
-#if using termux
-#plt.savefig('../figs/uni_cdf.pdf')
-#plt.savefig('../figs/uni_cdf.eps')
-#subprocess.run(shlex.split("termux-open ../figs/uni_cdf.pdf"))
-#if using termux
+plt.legend(["Theory","practicl"])
 plt.savefig('/home/mannava/latex/gauss_cdf.pdf')
-#plt.savefig('../figs/gauss_cdf.eps')
-#subprocess.run(shlex.split("termux-open ../figs/gauss_cdf.pdf"))
-#else
 plt.show() #opening the plot window

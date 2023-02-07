@@ -29,20 +29,16 @@ for i in range(0,100):
 print(err_ind)
 print(err_n)
 print(err)	
-plt.plot(x.T,err)#plotting the CDF
+
+uni_cdf = np.piecewise(x, [x < 0, ((x >= 0) & (x < 1)),x>=1], [0, lambda x: x, 1])
+plt.scatter(x.T,err,color='r')#plotting the CDF
+plt.plot(x,uni_cdf)
 plt.grid() #creating the grid
 plt.xlabel('$x$')
 plt.ylabel('$F_X(x)$')
+plt.legend(["practical","theory"])
 
-#if using termux
 plt.savefig('/home/mannava/latex/uni_cdf.pdf')
-#plt.savefig('../figs/uni_cdf.eps')
-#subprocess.run(shlex.split("termux-open ../figs/uni_cdf.pdf"))
-#if using termux
-#plt.savefig('../figs/gauss_cdf.pdf')
-#plt.savefig('../figs/gauss_cdf.eps')
-#subprocess.run(shlex.split("termux-open ../figs/gauss_cdf.pdf"))
-#else
 plt.show() #opening the plot window
 
 

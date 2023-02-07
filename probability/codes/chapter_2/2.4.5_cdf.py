@@ -19,7 +19,7 @@ import shlex
 randvar = np.loadtxt('triangle.dat',dtype='double')
 print(randvar)
 
-
+vec_tri_cdf = np.piecewise(x, [x < 0, ((x >= 0) & (x < 1)), ((x >= 1) & (x < 2)), x >= 2], [0, lambda x: x**2/2, lambda x: 2*x - x**2/2 - 1, 1])
 for i in range(0,100):
 	err_ind = np.nonzero(randvar < x[i]) #checking probability condition
 	err_n = np.size(err_ind) #computing the probability
@@ -27,18 +27,11 @@ for i in range(0,100):
 print(err_ind)
 print(err_n)
 print(err)	
-plt.plot(x.T,err)#plotting the CDF
+plt.scatter(x.T,err,label='practical')
+plt.plot(x,vec_tri_cdf,color='r',label='theory')
 plt.grid() #creating the grid
 plt.xlabel('$x$')
 plt.ylabel('$F_X(x)$')
-
-#if using termux
-#plt.savefig('../figs/uni_cdf.pdf')
-#plt.savefig('../figs/uni_cdf.eps')
-#subprocess.run(shlex.split("termux-open ../figs/uni_cdf.pdf"))
-#if using termux
+plt.legend(["Numerical","Theory"])
 plt.savefig('/home/mannava/latex/triangle_cdf.pdf')
-#plt.savefig('../figs/gauss_cdf.eps')
-#subprocess.run(shlex.split("termux-open ../figs/gauss_cdf.pdf"))
-#else
 plt.show() #opening the plot window

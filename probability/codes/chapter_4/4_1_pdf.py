@@ -26,11 +26,13 @@ for i in range(0,maxrange):
 	
 pdf = np.gradient(err, x, edge_order=2)
 
-plt.plot(x,pdf)             # plotting estimated PDF
+vec_tri_pdf = np.piecewise(x, [x < 0, x >= 0], [0, lambda x: 0.5*np.exp(-x/2)])
+plt.scatter(x,pdf,color='r')
+plt.plot(x,vec_tri_pdf)
 plt.grid() #creating the grid
 plt.xlabel('$x_i$')
 plt.ylabel('$p_X(x_i)$')
-
+plt.legend(["practical","Theory"])
 plt.savefig('/home/mannava/latex/pdf.pdf')
 
 plt.show()

@@ -5,22 +5,18 @@ import mpmath as mp
 import scipy 
 import matplotlib.pyplot as plt
 
-#if using termux
-import subprocess
-import shlex
-#end if
 
 
 maxrange=100
 maxlim=3.0
 x = np.linspace(-maxlim,maxlim,maxrange)#points on the x axis
-simlen = int(1e4) #number of samples
+simlen = int(1e6) #number of samples
 err = [] #declaring probability list
 pdf = [] #declaring pdf list
 h = 2*maxlim/(maxrange-1);
-#randvar = np.random.normal(0,1,simlen)
 randvar = np.loadtxt('triangle.dat',dtype='double')
-#randvar = np.loadtxt('gau.dat',dtype='double')
+vec_tri_pdf = np.piecewise(x, [x < 0, ((x >= 0) & (x < 1)), ((x >= 1) & (x < 2)), x >= 2], [0, lambda x: x, lambda x: 2-x, 0])
+vec_tri_cdf = np.piecewise(x, [x < 0, ((x >= 0) & (x < 1)), ((x >= 1) & (x < 2)), x >= 2], [0, lambda x: x**2/2, lambda x: 2*x - x**2/2 - 1, 1])
 
 for i in range(0,maxrange):
 	err_ind = np.nonzero(randvar < x[i]) #checking probability condition
@@ -37,20 +33,12 @@ def gauss_pdf(x):
 	
 vec_gauss_pdf = scipy.vectorize(gauss_pdf)
 
-plt.plot(x[0:(maxrange-1)].T,pdf,'o')
-plt.plot(x,vec_gauss_pdf(x))#plotting the CDF
+plt.plot(x[0:(maxrange-1)].T,pdf,'o',label='practical')
+plt.plot(x,vec_tri_pdf,label='Theoritical')
 plt.grid() #creating the grid
 plt.xlabel('$x_i$')
 plt.ylabel('$p_X(x_i)$')
 plt.legend(["Numerical","Theory"])
 
-#if using termux
-#plt.savefig('../figs/uni_pdf.pdf')
-#plt.savefig('../figs/uni_pdf.eps')
-#subprocess.run(shlex.split("termux-open ../figs/uni_pdf.pdf"))
-#if using termux
 plt.savefig('/home/mannava/latex/triangle_pdf.pdf')
-#plt.savefig('../figs/gauss_pdf.eps')
-#subprocess.run(shlex.split("termux-open ../figs/gauss_pdf.pdf"))
-#else
 plt.show() #opening the plot window

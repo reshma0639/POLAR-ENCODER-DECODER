@@ -25,7 +25,7 @@ for i in gamma_db:
     prob_error_num.append(np.count_nonzero(A_samples+N_samples < 0)/num_samples)
     prob_error_th.append(0.5-0.5*np.sqrt(gamma)/np.sqrt(2+gamma))
 
-plt.semilogy(gamma_db, prob_error_num, 'o')
+plt.scatter(gamma_db, prob_error_num, color='r')
 plt.semilogy(gamma_db, prob_error_th)
 plt.grid()
 plt.xlabel('$\gamma$')

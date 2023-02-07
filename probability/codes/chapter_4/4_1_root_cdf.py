@@ -19,6 +19,7 @@ x1_var = np.random.normal(0, 1, simlen)
 x2_var = np.random.normal(0, 1, simlen)
 v_var = np.sqrt(x1_var**2 + x2_var**2)
 
+vec_pdf = np.piecewise(x, [x < 0, x >= 0], [0, lambda x: 1-np.exp(-x*x/2)])
 for i in range(0,maxrange):
 	err_ind = np.nonzero(v_var < x[i]) #checking probability condition
 	err_n = np.size(err_ind) #computing the probability
@@ -26,10 +27,12 @@ for i in range(0,maxrange):
 	
 #pdf = np.gradient(err, x, edge_order=2)
 
-plt.plot(x.T,err)   #plotting the CDF
+plt.scatter(x.T,err,color='r')   #plotting the CDF
+plt.plot(x,vec_pdf)
 plt.grid()          #creating the grid
 plt.xlabel('$x$')
 plt.ylabel('$F_X(x)$')
+plt.legend(["practical","Theory"])
 
 plt.savefig('/home/mannava/latex/root_cdf.pdf')
 

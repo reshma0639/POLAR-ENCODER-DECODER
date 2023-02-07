@@ -16,7 +16,8 @@ simlen = int(1e6)    #number of samples
 print(simlen)
 
 err = [] #declaring probability list
-
+def exp_cdf(x):
+	return np.piecewise(x, [x<0, x>=0], [0, lambda x: 1-np.exp(-x/2)])
 
 randvar = np.loadtxt('other.dat',dtype='double')
 print(randvar)
@@ -30,17 +31,11 @@ print(err_ind)
 print(err_n)
 print(err)	
 plt.plot(x.T,err)#plotting the CDF
+plt.scatter(x,exp_cdf(x),color='r')
 plt.grid() #creating the grid
 plt.xlabel('$x$')
 plt.ylabel('$F_X(x)$')
+plt.legend(["practical","Theory"])
 
-#if using termux
-#plt.savefig('../figs/uni_cdf.pdf')
-#plt.savefig('../figs/uni_cdf.eps')
-#subprocess.run(shlex.split("termux-open ../figs/uni_cdf.pdf"))
-#if using termux
 plt.savefig('/home/mannava/latex/log.pdf')
-#plt.savefig('../figs/gauss_cdf.eps')
-#subprocess.run(shlex.split("termux-open ../figs/gauss_cdf.pdf"))
-#else
 plt.show() #opening the plot window

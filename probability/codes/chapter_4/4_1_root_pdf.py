@@ -19,6 +19,7 @@ x1_var = np.random.normal(0, 1, simlen)
 x2_var = np.random.normal(0, 1, simlen)
 v_var = np.sqrt(x1_var**2 + x2_var**2)
 
+vec = np.piecewise(x, [x < 0, x >= 0], [0, lambda x: x*np.exp(-x*x/2)])
 for i in range(0,maxrange):
 	err_ind = np.nonzero(v_var < x[i]) #checking probability condition
 	err_n = np.size(err_ind) #computing the probability
@@ -26,11 +27,12 @@ for i in range(0,maxrange):
 	
 pdf = np.gradient(err, x, edge_order=2)
 
-plt.plot(x,pdf)             # plotting estimated PDF
+plt.scatter(x,pdf,color='r')             # plotting estimated PDF
+plt.plot(x,vec)
 plt.grid() #creating the grid
 plt.xlabel('$x_i$')
 plt.ylabel('$p_X(x_i)$')
-
+plt.legend(["practical","Theory"])
 plt.savefig('/home/mannava/latex/chisq_pdf.pdf')
 
 plt.show()

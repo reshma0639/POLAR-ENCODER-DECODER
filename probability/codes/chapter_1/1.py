@@ -11,9 +11,10 @@ simlen = 10000
 n = range(2,13)
 # Generate X1 and X2
 y = np.random.randint(1,7, size=(2, simlen))
-
+print(y)
 #Generate X
-X = np.sum(y, axis = 0) 
+X = np.sum(y, axis = 0)
+print(X)
 #Find the frequency of each outcome
 unique, counts = np.unique(X, return_counts=True)
 #Simulated probability
