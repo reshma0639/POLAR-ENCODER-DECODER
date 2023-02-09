@@ -122,7 +122,7 @@ for i in range(0,N):
 
 r=[]
 C=[]
-r=bpsk+sigma*np.random.randn(1,N)
+r=bpsk#+sigma*np.random.randn(1,N)
 
 
 
