@@ -2,7 +2,7 @@
 
 
 #include<Arduino.h>
-const unsigned int MAX_MESSAGE_LENGTH = 200;
+const unsigned int MAX_MESSAGE_LENGTH = 201;
 #include<malloc.h>
 #include<stdlib.h>
 #include<string.h>

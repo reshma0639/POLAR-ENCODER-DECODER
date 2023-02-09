@@ -42,7 +42,7 @@ print(len(Q1))
 
 Q=[]
 
-
+msg=[]
 K=int(input("Enter the no of message bits to be transmitted : "))
 
 N=1024
@@ -65,13 +65,12 @@ print()
 n=int(np.log2(N))
 print("n={}".format(n))
 print()
-msg=[]
 
 #frozen bits for message signal
-
+print(msg)
+print(len(msg))
 
 for i in range(K):
-    #ele=int(input('Enter data bits of size K : '))
     ele=1
     msg.append(ele)
 u=[]
@@ -222,7 +221,7 @@ while(done==0):
             temp=int(temp/2)
             d=f(a,b)
             L[depth,temp*node:temp*node+(temp)]=f(a,b)
-            print("L is {}".format(L))
+            #print("L is {}".format(L))
             ns[npos]=1
             #print("ns is {}".format(ns))
         else:
@@ -248,7 +247,7 @@ while(done==0):
                 temp = int(temp / 2)
                 L[depth,temp*node:temp*(node+1)] = g(a,b,ucapn)
                 #print(g(a,b,ucapn))
-                print("L is {}".format(L))
+                #print("L is {}".format(L))
                 ns[npos] = 2;
                 #print("ns is {}".format(ns))
             else:
@@ -296,10 +295,4 @@ print(len(res))
 
 
 
-
-plt.semilogy(snr_array,ber_array)
-plt.scatter(snr_array,ber_array,'r')
-plt.xlabel('signal to noise ratio in dB')
-plt.ylabel('Bit error rates')
-plt.show()
 

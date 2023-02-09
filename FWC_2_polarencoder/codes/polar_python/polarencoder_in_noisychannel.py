@@ -53,14 +53,11 @@ for i in range(0,1024):
     if Q1[i]<N:
         Q.append(Q1[i])
 
-for i in range(0,1024):
-    if Q1[i]==120:
-        print(i)
 
 
 ber_array = []
 snr_array = []
-for snr in range(1, 8):
+for snr in range(1, 10):
     #guassian noise characterstics
     snr_array.append(snr)
     EbNo_dB=snr
@@ -305,6 +302,8 @@ for snr in range(1, 8):
      
             #something
     final_result=[]
+    print(L);
+    print(ucap);
     #print("final depth is :{}".format(depth))
     final_result=ucap[n,Q[N-K:]]
     dec=ucap[n,0:]
@@ -322,7 +321,7 @@ for snr in range(1, 8):
     BER=(bit_errors/K)
     print(bit_errors)
     ber_array.append(BER)
-#print("ns is : {}".format(ns));
+print("ns is : {}".format(ns));
 plt.plot(snr_array,ber_array)
 plt.xlabel('signal to noise ratio in dB')
 plt.ylabel('Bit error rates')
