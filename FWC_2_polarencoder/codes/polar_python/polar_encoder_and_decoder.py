@@ -297,9 +297,5 @@ print(len(res))
 
 
 
-plt.semilogy(snr_array,ber_array)
-plt.scatter(snr_array,ber_array,'r')
-plt.xlabel('signal to noise ratio in dB')
-plt.ylabel('Bit error rates')
-plt.show()
+
 
