@@ -94,7 +94,10 @@ void loop()
      Serial.println(" ");
      Serial.println(message);
 Serial.println(" ");
-
+for(i=0;i<K;i++)
+{
+  message[i]=(message[i]-'0');
+}
 for (i = 0; i < N; i++)
   {
     u[i] = 0;
