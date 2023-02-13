@@ -5,16 +5,13 @@ import array
 import numpy as np
 import random
 
-#intialising binary sequence
-n=10
-bin_ip_seq = np.random.choice([0, 1], size=(n))
+
+
+n=10  #length of message signal
+bin_ip_seq = np.random.choice([0, 1], size=(n))  #generating random input signal
 n=len(bin_ip_seq)
 print ("The input binary sequence is : ")
 print (bin_ip_seq)
-figure(7)
-xlabel('Time')
-ylabel('Signal')
-plt.plot(bin_ip_seq)
 print(n)
 print("\r")
 #passing it to non return to zero level encoder
@@ -67,12 +64,6 @@ t=r_[0:Tb:0.01] #100
 fc=1
 carrier=sqrt(2*(Tb**-1))*sin(2*pi*fc*t) #100
 M=len(carrier)
-figure(9) 
-xlabel('Time')
-ylabel('Carrier')
-plt.plot(carrier)
-show()
-
 
 bpskarray=[]
 for i in range(0,N):
@@ -98,10 +89,6 @@ t1=r_[0:n*0.7:0.001]
 Eb=.000001*var(carrier)*len(t1)
 print(len(t1))
 jamming=Eb*x*(sqrt(2*(Tb**-1))*(np.cos(2*np.pi*fc*t1)+1j*(np.sin(2*np.pi*fc*t1))))
-figure(4)
-xlabel('Time')
-ylabel('Jamming')
-plt.plot(jamming)
 print("\n Jamming")
 print (jamming)
 jamvar=10**(-0.1*(jamming))
@@ -127,10 +114,6 @@ receivedsignal=np.array(bpsksignal)+np.array(jamming)
 receivearr=[]
 print("\n Received signal")
 print(receivedsignal)
-figure(3)
-xlabel('Time')
-ylabel('Received Signal')
-plt.plot(receivedsignal)
 ber=[]
 
 for i in range(50):
@@ -191,11 +174,6 @@ print("\nbinary input")
 print(bin_ip_seq)
 
 
-figure(1)
-plt.plot(bpsksignal)
-xlabel('Time')
-ylabel('BPSK Signal')
-
 
 
 #check whether input sequence in same as received seq
@@ -217,5 +195,39 @@ print(len(ber))
 print(len(carrier))
 print(len(q))
 #plot the error graph pp
-plt.show() 
 
+
+figure(1)
+xlabel('Time')
+ylabel('Signal')
+plt.plot(bin_ip_seq)
+
+
+figure(2) 
+xlabel('Time')
+ylabel('Carrier')
+plt.plot(carrier)
+
+
+figure(3)
+xlabel('Time')
+ylabel('Jamming')
+plt.plot(jamming)
+
+
+figure(4)
+plt.plot(bpsksignal)
+xlabel('Time')
+ylabel('BPSK Signal')
+
+figure(5)
+xlabel('Time')
+ylabel('Received Signal')
+plt.plot(receivedsignal)
+
+
+figure(6)
+xlabel('Time')
+ylabel('demodulated')
+plt.plot(finalarr)
+plt.show()
