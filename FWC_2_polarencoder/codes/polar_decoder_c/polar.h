@@ -1,4 +1,15 @@
 
+/* Code by : Mannava Venkatasai FWC22030
+  Date : Feb 21 2023
+Released under : Dr. G. V. V. Sharma sir
+This header file consists of the functions of both polar encoder and decoder as per 5G standard.
+The polar function will perform polar encoding operation.
+The dec function will perform polar decoding operation.
+The result is observed at main function.
+Code is free any one can use 
+https://github.com/Mannava123455/module_2/blob/main/LICENSE.md
+  */
+
 int min(int a,int b);
 int *f(int *a,int *b,int *c,int temp);
 int *g(int *a,int *b,int *c,int *d,int temp);
