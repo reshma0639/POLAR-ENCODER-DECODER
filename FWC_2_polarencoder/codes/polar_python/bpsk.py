@@ -196,37 +196,38 @@ print(len(carrier))
 print(len(q))
 #plot the error graph pp
 
-
 figure(1)
+plt.subplot(2,3,1);
 xlabel('Time')
 ylabel('Signal')
 plt.plot(bin_ip_seq)
 
 
-figure(2) 
+plt.subplot(2,3,2)
 xlabel('Time')
 ylabel('Carrier')
 plt.plot(carrier)
 
 
-figure(3)
+
+plt.subplot(2,3,3)
 xlabel('Time')
 ylabel('Jamming')
 plt.plot(jamming)
 
 
-figure(4)
+plt.subplot(2,3,4)
 plt.plot(bpsksignal)
 xlabel('Time')
 ylabel('BPSK Signal')
 
-figure(5)
+plt.subplot(2,3,5)
 xlabel('Time')
 ylabel('Received Signal')
 plt.plot(receivedsignal)
 
 
-figure(6)
+plt.subplot(2,3,6)
 xlabel('Time')
 ylabel('demodulated')
 plt.plot(finalarr)
