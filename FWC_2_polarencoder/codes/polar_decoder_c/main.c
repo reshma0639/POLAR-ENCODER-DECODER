@@ -4,7 +4,7 @@ Released under : Dr. G. V. V. Sharma sir
 This is main function for doing both polar encoding and decoding as per the 5G standard.
 The functions for this code is available at polar.h file
 Code is free any one can use 
-https://github.com/srikanth9515/FWC/blob/main/LICENSE.md
+https://github.com/Mannava123455/module_2/blob/main/LICENSE.md
   */
 
 
