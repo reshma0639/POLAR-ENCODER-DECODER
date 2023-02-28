@@ -1,4 +1,14 @@
-// Code uploaded in esp32 and The results are seen in Serial monitor
+
+/* Code by : Mannava Venkatasai FWC22030
+  Date : Feb 21 2023
+Released under : Dr. G. V. V. Sharma sir
+The below code is the implementation of polar encoder in ESP32 board.The Arduino board will act as a Transmitter it will tranmit the data to the esp32 Serially . Esp32 has a buffer of size 200.It continously encode the incomming bits.
+The output can be seen in Serial monitor.
+Code is free any one can use 
+https://github.com/Mannava123455/module_2/blob/main/LICENSE.md
+  */
+
+
 
 
 #include<Arduino.h>
@@ -60,6 +70,7 @@ int i,j,k;
 void setup() 
 {
  Serial.begin(9600);
+ Serial.print("hello");
 }
 
 void loop() 
@@ -155,7 +166,7 @@ Serial.print("The encoded signal is : ");
 Serial.println(" ");
 for(i=0;i<N;i++)
 {
-  Serial.print((conc[i]=='1')?"0":"1");
+  Serial.print(conc[i]);
 }
 
 Serial.print("\n");

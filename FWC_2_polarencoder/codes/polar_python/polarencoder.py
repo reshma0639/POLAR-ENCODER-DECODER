@@ -52,15 +52,16 @@ for i in range(len(Q1)):
 
 
 
-print("The reliability sequence of 8 bit code : {}".format(Q))
+#print("The reliability sequence of 8 bit code : {}".format(Q))
 print()
 
 n=int(np.log2(N))
-print("n={}".format(n))
+#print("n={}".format(n))
 print()
 msg=[]
 for i in range(K):
-    ele=int(input('Enter data bits of size K : '))
+   # ele=int(input('Enter data bits of size K : '))
+    ele=1
     msg.append(ele)
 u=[]
 for i in range(N):
@@ -68,7 +69,7 @@ for i in range(N):
     u.append(ele)
 for j in range(0,len(msg)):
     u[Q[N-K+j]] = msg[j]
-print("The frozen data of message is : {}".format(u))
+#print("The frozen data of message is : {}".format(u))
 print()
 
 

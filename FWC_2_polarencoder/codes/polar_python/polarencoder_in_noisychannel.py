@@ -35,7 +35,7 @@ Q1=[0,1,2,4,8,16,32,3,5,64,9,6,17,10,18,128,12,33,65,20,256,34,24,36,7,129,66,51
 971,890,509,949,973,1000,892,950,863,759,1008,510,979,953,763,974,954,879,981,982,927,995,765,956,887,985,997,986,943,891,998,766,
 511,988,1001,951,1002,893,975,894,1009,955,1004,1010,957,983,958,987,1012,999,1016,767,989,1003,990,1005,959,1011,1013,895,1006,1014,1017,1018,
 991,1020,1007,1015,1019,1021,1022,1023]
-print(len(Q1))
+#print(len(Q1))
 
 
 
@@ -77,13 +77,13 @@ for snr in range(1, 10):
 
 
 
-    print("The reliability sequence of 8 bit code : {}".format(Q))
+    #print("The reliability sequence of 8 bit code : {}".format(Q))
     print()
-    print(len(Q))
+    #print(len(Q))
     print()
 
     n=int(np.log2(N))
-    print("n={}".format(n))
+    #print("n={}".format(n))
     print()
     msg=[]
 
@@ -92,9 +92,10 @@ for snr in range(1, 10):
 
     for i in range(K):
         #ele=int(input('Enter data bits of size K : '))
-        ele=1
+        ele=random2.randint(0, 1)
         msg.append(ele)
     u=[]
+    print(msg);
 
 
     for i in range(N):
@@ -104,7 +105,7 @@ for snr in range(1, 10):
 
     for j in range(0,len(msg)):
         u[Q[N-K+j]] = msg[j]
-    print("The frozen data of message bits of size K is : {}".format(u))
+    #print("The frozen data of message bits of size K is : {}".format(u))
     print( )
 
 
@@ -156,7 +157,7 @@ for snr in range(1, 10):
 
     F=[]
     F=Q[0:N-K]
-    print("Frozen positions : {}".format(F))
+    #print("Frozen positions : {}".format(F))
     print()
     ns=[]
     L = np.zeros([n+1,N],dtype = float) #beliefs
@@ -302,18 +303,18 @@ for snr in range(1, 10):
      
             #something
     final_result=[]
-    print(L);
-    print(ucap);
-    #print("final depth is :{}".format(depth))
+    #print(L);
+    #print(ucap);
+    ##print("final depth is :{}".format(depth))
     final_result=ucap[n,Q[N-K:]]
     dec=ucap[n,0:]
     print( )
-    print("Last row of ucap is : {} ".format(ucap[n,0:]))
-    print(len(ucap[n,0:]))
+    #print("Last row of ucap is : {} ".format(ucap[n,0:]))
+    #print(len(ucap[n,0:]))
     index=0
     res=dec[Q[N-K:N]]
     print("The decoded signal is {}".format(res))
-    print(len(res))
+    #print(len(res))
     bit_errors=0
     for i in range(0,K):
         if(msg[i]!=res[i]):
@@ -321,8 +322,8 @@ for snr in range(1, 10):
     BER=(bit_errors/K)
     print(bit_errors)
     ber_array.append(BER)
-print("ns is : {}".format(ns));
-plt.plot(snr_array,ber_array)
+#print("ns is : {}".format(ns));
+plt.semilogy(snr_array,ber_array)
 plt.xlabel('signal to noise ratio in dB')
 plt.ylabel('Bit error rates')
 plt.show()

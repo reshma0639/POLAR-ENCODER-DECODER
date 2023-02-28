@@ -191,6 +191,8 @@ for(d=n12-1;d>=0;d--)
 return conc;
 }
 
+
+// function for decoding
 int *dec(int *enc,int K,int N)
 {
 int *decoded;

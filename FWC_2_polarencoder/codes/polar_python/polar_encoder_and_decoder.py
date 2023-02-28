@@ -1,3 +1,17 @@
+
+''' Code by : Mannava Venkatasai FWC22030
+  Date : Feb 21 2023
+Released under : Dr. G. V. V. Sharma sir
+This is the python code for doing polar encoding and decoding.
+Code is free any one can use 
+https://github.com/Mannava123455/module_2/blob/main/LICENSE.md
+  '''
+
+
+
+
+
+
 import numpy as np
 import math
 import random2
@@ -42,7 +56,11 @@ print(len(Q1))
 
 Q=[]
 
-msg=[]
+msg=[0,1,0,0,0,1,0,0,0,1,1,0,0,1,0,1,1,1,0,0,0,0,1,0,1,0,1,1,0,0,1,0,0,1,0,1,1,1,0,0,0,0,0,1,0,0,0,1,0,1,1,0,0,0,0,1,0,0,1,0,1,1,1,0,1,1,0,1,0,0,1,0,1,1,1,0,1,0,1,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,1,0,1,1,0,0,1,1,1,0,0,0,1,0,0,1,0,1,1,1,1,0,1,0,0,1,1,0,1,1,1,1,0,0,1,1,0,0,1,1,1,0,0,1,1,1,0,0,1,0,1,0,0,0,0,0,1,0,1,1,1,1,0,0,1,1,0,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,0,0,1,1,1,1,0,1,1,0,0,1,1,0,1,0,0,0,1,0,0]
+ 
+ 
+ 
+ 
 K=int(input("Enter the no of message bits to be transmitted : "))
 
 N=1024
@@ -70,9 +88,9 @@ print()
 print(msg)
 print(len(msg))
 
-for i in range(K):
-    ele=1
-    msg.append(ele)
+#for i in range(K):
+ #   ele=1
+  #  msg.append(ele)
 u=[]
 
 
@@ -296,8 +314,3 @@ print(len(res))
 
 
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 0c910bb4bd28a62c3e4f7bf03d8b4a54c8744de5
